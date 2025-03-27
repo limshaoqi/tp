@@ -21,10 +21,12 @@ public class JsonAdaptedAppointmentTest {
      */
     @Test
     public void toModelType_validAppointmentDetails_returnsAppointment() throws Exception {
-        Appointment originalAppointment = new Appointment(VALID_DOCTOR_NRIC, VALID_APPOINTMENT_DESCRIPTION,
+        Appointment expectedAppointment = new Appointment(VALID_DOCTOR_NRIC, VALID_APPOINTMENT_DESCRIPTION,
                 VALID_START_DATE, VALID_END_DATE);
-        JsonAdaptedAppointment adaptedAppointment = new JsonAdaptedAppointment(originalAppointment);
-        assertEquals(originalAppointment, adaptedAppointment.toModelType());
+        JsonAdaptedAppointment appointment = new JsonAdaptedAppointment(VALID_DOCTOR_NRIC, VALID_APPOINTMENT_DESCRIPTION,
+                VALID_START_DATE, VALID_END_DATE);
+
+        assertEquals(expectedAppointment, appointment.toModelType());
     }
 
     @Test
