@@ -70,5 +70,15 @@ public class JsonAdaptedAppointment {
 
         return new Appointment(doctorNric, appointmentDescription, startDate, endDate);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof JsonAdaptedAppointment // instanceof handles nulls
+                && doctorNric.equals(((JsonAdaptedAppointment) other).doctorNric)
+                && appointmentDescription.equals(((JsonAdaptedAppointment) other).appointmentDescription)
+                && startDate.equals(((JsonAdaptedAppointment) other).startDate)
+                && endDate.equals(((JsonAdaptedAppointment) other).endDate));
+    }
 }
 

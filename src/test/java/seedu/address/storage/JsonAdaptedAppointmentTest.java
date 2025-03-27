@@ -32,7 +32,7 @@ public class JsonAdaptedAppointmentTest {
         JsonAdaptedAppointment appointment = new JsonAdaptedAppointment(null, VALID_APPOINTMENT_DESCRIPTION,
                 VALID_START_DATE, VALID_END_DATE);
         String expectedMessage = String.format(JsonAdaptedAppointment.MISSING_FIELD_MESSAGE_FORMAT,
-                                               "doctor nric should not be null");
+                                               "doctor nric");
         assertThrows(IllegalValueException.class, expectedMessage, appointment::toModelType);
     }
 
@@ -41,7 +41,7 @@ public class JsonAdaptedAppointmentTest {
         JsonAdaptedAppointment appointment = new JsonAdaptedAppointment(VALID_DOCTOR_NRIC, null,
                 VALID_START_DATE, VALID_END_DATE);
         String expectedMessage = String.format(JsonAdaptedAppointment.MISSING_FIELD_MESSAGE_FORMAT,
-                "appointment description should not be null");
+                "appointment description");
         assertThrows(IllegalValueException.class, expectedMessage, appointment::toModelType);
     }
 
@@ -50,7 +50,7 @@ public class JsonAdaptedAppointmentTest {
         JsonAdaptedAppointment appointment = new JsonAdaptedAppointment(VALID_DOCTOR_NRIC, VALID_APPOINTMENT_DESCRIPTION,
                 null, VALID_END_DATE);
         String expectedMessage = String.format(JsonAdaptedAppointment.MISSING_FIELD_MESSAGE_FORMAT,
-                "start date should not be null");
+                "start date");
         assertThrows(IllegalValueException.class, expectedMessage, appointment::toModelType);
     }
 
@@ -59,7 +59,7 @@ public class JsonAdaptedAppointmentTest {
         JsonAdaptedAppointment appointment = new JsonAdaptedAppointment(VALID_DOCTOR_NRIC, VALID_APPOINTMENT_DESCRIPTION,
                 VALID_START_DATE, null);
         String expectedMessage = String.format(JsonAdaptedAppointment.MISSING_FIELD_MESSAGE_FORMAT,
-                "end date should not be null");
+                "end date");
         assertThrows(IllegalValueException.class, expectedMessage, appointment::toModelType);
     }
 }
