@@ -480,7 +480,7 @@ Refer to the [Medical Report Parameters](#medical-report-parameters) section for
 * The patient with the NRIC you give must exist in Klinix, otherwise Klinix will show an error message. 
 * If the patient already has a medical report, adding a new one will overwrite the existing one. 
 * Fields that are blank will be set to `None` by default.
-* Although some fields are optional, at least one of the medical fields must be provided, else Klinix will show an error message.
+* At least one of the medical fields (allergies, illnesses, surgeries, immunizations) must be provided, else Klinix will show an error message.
 
 </Box>
 
@@ -820,8 +820,8 @@ Action     | Format, Examples
 **Clear Medicine Usages** | Format 1: `clearmu ic/NRIC` <br> e.g. `clearmu ic/S1234567A` <br> Format 2: `clearmu INDEX` <br> e.g. `clearmu 1`
 **Delete** | Format 1: `delete INDEX`<br> e.g. `delete 3` <br> Format 2: `delete ic/NRIC` <br> e.g. `delete ic/S1234567A`
 **Delete Appointment** | `deleteappt INDEX ic/NRIC` <br> e.g. `deleteappt 3 ic/S1234567A`
-**Delete Medicine Usage** | `deletemu INDEX ic/NRIC` <br> e.g. `deletemu 1 ic/S1234568B`
 **Delete Medical Report** | Format 1: `deletemr ic/NRIC` <br> e.g. `deletemr ic/S1234567B` <br> Format 2: `deletemr INDEX` <br> e.g. `deletemr 3`
+**Delete Medicine Usage** | `deletemu INDEX ic/NRIC` <br> e.g. `deletemu 1 ic/S1234568B`
 **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [ic/NRIC] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.`edit 2 n/James Lee e/jameslee@example.com`
 **Exit**   | `exit`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g. `find James Jake`

@@ -417,8 +417,8 @@ The use cases below are not exhaustive.
   Use case resumes at step 1.
 - 1b. Invalid parameters format → Klinix shows an invalid parameters error message.<br>
   Use case resumes at step 1.
-- 1c. No matching patient found → Klinix shows a message indicating that there are no matching patients.<br>
-  Use case ends.
+- 1c. No matching patient found → Klinix shows an invalid patient error message.<br>
+  Use case resumes at step 1.
 - 1d. No medical fields provided → Klinix shows an invalid fields message.<br>
   Use case resumes at step 1.
 
